@@ -15,22 +15,39 @@
 
         h2 {
             font-size: 36px; /* Tamaño aumentado */
-            text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00; /* Efecto neón */
+            text-shadow: 0 0 3px #ff0000, 0 0 5px #ff0000, 0 0 8px #ff0000; /* Efecto neón rojo apagado */
             margin-bottom: 30px;
         }
 
         button {
             padding: 10px 20px;
-            background-color: yellow;
             color: black;
             border: none;
             cursor: pointer;
             font-size: 16px;
             margin-top: 10px;
+            text-shadow: 0 0 3px #ff0000, 0 0 5px #ff0000; /* Efecto neón para los botones */
+            transition: background-color 0.3s, text-shadow 0.3s;
+        }
+
+        button:nth-child(3n+1) {
+            background-color: red; /* Color rojo para los botones en posiciones 1, 4, 7... */
+        }
+        
+        button:nth-child(3n+2) {
+            background-color: yellow; /* Color amarillo para los botones en posiciones 2, 5, 8... */
+        }
+        
+        button:nth-child(3n+0) {
+            background-color: green; /* Color verde para los botones en posiciones 3, 6, 9... */
+        }
+        
+        button:last-child {
+            background-color: white; /* Color blanco para el último botón */
         }
 
         button:hover {
-            background-color: #e0e000;
+            text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000; /* Efecto neón más fuerte al pasar el cursor */
         }
 
         .dato {
