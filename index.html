@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos de Transferencia Bancaria</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .datos {
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Datos de Transferencia Bancaria</h2>
+<div class="datos" id="datos">
+    Número de cuenta: 1234567890<br>
+    Nombre: Juan Pérez<br>
+    Banco: XYZ<br>
+</div>
+
+<button onclick="copiarAlPortapapeles()">Copiar Datos</button>
+
+<script>
+    function copiarAlPortapapeles() {
+        const datos = document.getElementById("datos").innerText;
+        navigator.clipboard.writeText(datos).then(() => {
+            alert("Datos copiados al portapapeles");
+        }).catch(err => {
+            console.error("Error al copiar los datos: ", err);
+        });
+    }
+</script>
+
+</body>
+</html>
